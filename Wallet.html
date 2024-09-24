@@ -3,25 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wallet - Dark Hours</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Wallet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+        #walletContainer {
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #fff;
+            background-color: #000;
+            color: #fff;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #ccc;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <h1>Wallet Submission</h1>
+        <h3>Welcome to your Wallet</h3>
     </header>
-    <section>
-        <p>Wallet submission will be available shortly. Stay tuned for updates.</p>
-    </section>
-    <footer>
-        <nav>
-            <ul class="footer-nav">
-                <li><a href="index.html"><img src="home.png" alt="Home"></a></li>
-                <li><a href="Tasks.html"><img src="earn.png" alt="Tasks"></a></li>
-                <li><a href="Frens.html"><img src="frens.png" alt="Frens"></a></li>
-                <li><a href="Wallet.html"><img src="wallet.png" alt="Wallet"></a></li>
-            </ul>
-        </nav>
-    </footer>
+
+    <div id="walletContainer">
+        <!-- This is where the wallet input or saved address will be displayed -->
+        <input type="text" id="walletAddress" placeholder="Paste your USDT BEP20 address">
+        <button onclick="saveWalletAddress()">Save</button>
+    </div>
+
+    <script>
+        // Check if a saved wallet address exists and display it, otherwise show the input
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedWalletAddress = localStorage.getItem('walletAddress');
+            if (savedWalletAddress) {
+                displaySavedWalletAddress(savedWalletAddress);
+            }
+        });
+
+        // Function to save wallet address to localStorage
+        function saveWalletAddress() {
+            const walletAddressInput = document.getElementById('walletAddress').value;
+            if (walletAddressInput) {
+                localStorage.setItem('walletAddress', walletAddressInput);
+                displayMessage("Wallet address saved successfully!");
+                displaySavedWalletAddress(walletAddressInput);
+            } else {
+                displayMessage("Please enter a valid wallet address.");
+            }
+        }
+
+        // Function to display the saved wallet address and hide the input and button
+        function displaySavedWalletAddress(walletAddress) {
+            const walletAddressContainer = document.getElementById('walletContainer');
+            if (walletAddressContainer) {
+                walletAddressContainer.innerHTML = `
+                    <p>Your saved USDT BEP20 address: ${walletAddress}</p>
+                `;
+            }
+        }
+
+        // Custom message display function
+        function displayMessage(message) {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            messageElement.style.position = 'fixed';
+            messageElement.style.top = '50%';
+            messageElement.style.left = '50%';
+            messageElement.style.transform = 'translate(-50%, -50%)';
+            messageElement.style.backgroundColor = '#333';
+            messageElement.style.color = '#fff';
+            messageElement.style.padding = '10px 30px';
+            messageElement.style.borderRadius = '5px';
+            messageElement.style.zIndex = '1000';
+            messageElement.style.boxShadow = '0 2px 10px rgba(0,0,0,0.5)';
+            document.body.appendChild(messageElement);
+
+            setTimeout(() => {
+                document.body.removeChild(messageElement);
+            }, 7000); // Message will disappear after 7 seconds
+        }
+    </script>
+
 </body>
 </html>
