@@ -64,12 +64,12 @@
 <body>
 
     <header>
-        <h3>submit your Wallet address</h3>
+        <h1>Submit Your Wallet Address</h1>
     </header>
 
     <div id="walletContainer">
         <!-- This is where the wallet input or saved address will be displayed -->
-        <input type="text" id="walletAddress" placeholder="Paste your USDT BEP20 address">
+        <input type="text" id="walletAddress" placeholder="Paste Your USDT BEP20 Address">
         <button onclick="saveWalletAddress()">Save</button>
     </div>
 
@@ -110,7 +110,7 @@
             const walletAddressContainer = document.getElementById('walletContainer');
             if (walletAddressContainer) {
                 walletAddressContainer.innerHTML = `
-                    <p>Your saved USDT BEP20 address:<br>${walletAddress}</p>
+                    <p>Your USDT BEP20 Address Is:<br>${walletAddress}</p>
                 `;
             }
         }
