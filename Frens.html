@@ -13,10 +13,9 @@
                 return;
             }
             localStorage.setItem('inviteLink', inviteLink);
-            alert('Your invite link has been saved!');
             document.getElementById('saveButton').style.display = 'none'; // Hide the save button
             document.getElementById('copyButton').style.display = 'inline'; // Show the copy button
-            showMessage(`Good Job, Your ID is: ${inviteLink}`); // Show the message for 7 seconds
+            showMessage(`Good Job, You Linked Your Referral Link`); // Show the message for 7 seconds
         }
 
         function copyLink() {
@@ -61,7 +60,7 @@
 </head>
 <body>
     <header>
-        <h1>Invite A Friend And Earn More Hours</h1>
+        <h1>Invite A Friend,Earn More Hours</h1>
     </header>
     <section>
         <p>Get your referral link in the Telegram bot.</p>
