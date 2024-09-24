@@ -122,22 +122,12 @@ button:disabled {
     cursor: not-allowed;
 }
 
-/* Claim Button Styles */
+/* Claim Button Image Styles */
 #claimButton {
     width: 220px;
     height: 220px;
-    border-radius: 50%;
-    background-color: #00ff00; /* Red when enabled */
-    color: #000000;
-    border: none;
-    font-size: 1.2rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#claimButton:disabled {
-    background-color: #ffffff; /* Green when disabled */
-    cursor: not-allowed;
+    border-radius: 50%; /* Keeps the circular shape */
 }
 
 /* Countdown Timer Styles */
@@ -193,5 +183,5 @@ input[type="text"] {
 
 .footer-nav img {
     width: 50px; /* Adjust the size of the images */
-    height: 50px; /* Adjust the size of the images */
+    height: 65px; /* Adjust the size of the images */
 }
