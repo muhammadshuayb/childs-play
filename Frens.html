@@ -5,6 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invite a Friend - Dark Hours</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        function saveLink() {
+            const inviteLink = document.getElementById('inviteLink').value;
+            if (inviteLink === '') {
+                alert('Please enter your invite link.');
+                return;
+            }
+            localStorage.setItem('inviteLink', inviteLink);
+            alert('Your invite link has been saved!');
+            document.getElementById('saveButton').style.display = 'none'; // Hide the save button
+            document.getElementById('copyButton').style.display = 'inline'; // Show the copy button
+            showMessage(`Good Job, Your ID is: ${inviteLink}`); // Show the message for 7 seconds
+        }
+
+        function copyLink() {
+            const inviteLink = document.getElementById('inviteLink');
+            inviteLink.select();
+            document.execCommand('copy');
+            showMessage('Referral Link Copied'); // Show the copy message
+        }
+
+        function showMessage(message) {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            messageElement.style.position = 'absolute';
+            messageElement.style.top = '20px';
+            messageElement.style.left = '50%';
+            messageElement.style.transform = 'translateX(-50%)';
+            messageElement.style.backgroundColor = 'black'; // Black background
+            messageElement.style.color = 'white'; // White font
+            messageElement.style.padding = '10px';
+            messageElement.style.border = '1px solid #000';
+            messageElement.style.zIndex = '1000';
+            messageElement.style.borderRadius = '5px'; // Optional: rounded corners
+
+            document.body.appendChild(messageElement);
+            setTimeout(() => {
+                document.body.removeChild(messageElement);
+            }, 7000); // Remove the message after 7 seconds
+        }
+
+        window.onload = function() {
+            // Check if invite link is already saved
+            const savedLink = localStorage.getItem('inviteLink');
+            if (savedLink) {
+                document.getElementById('inviteLink').value = savedLink;
+                document.getElementById('saveButton').style.display = 'none';
+                document.getElementById('copyButton').style.display = 'inline';
+            } else {
+                document.getElementById('copyButton').style.display = 'none'; // Hide copy button initially
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -13,6 +66,10 @@
     <section>
         <p>Get your referral link in the Telegram bot.</p>
         <p>Remember, your referral bonus will not appear here but rather in the bot. It will be calculated and added to your existing balance before the distribution date.</p>
+        <p>Go to the bot and copy your invite link:</p>
+        <input type="text" id="inviteLink" placeholder="Paste your invite link here" />
+        <button id="saveButton" onclick="saveLink()">Save</button>
+        <button id="copyButton" onclick="copyLink()">Copy</button>
     </section>
     <footer>
         <nav>
