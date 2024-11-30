@@ -37,7 +37,6 @@ const userData = [
     { username: "amk36", wallet: "UQDWoCAyIm9-pe3C0lT4Z5tweqon3rLcsPjYqnfetDJ1ygJX", balance: 360 },
     { username: "amk37", wallet: "UQDWoCAyIm9-pe3C0lT4Z5tweqon3rLcsPjYqnfetDJ1ygJX", balance: 370 },
     { username: "amk38", wallet: "UQDWoCAyIm9-pe3C0lT4Z5tweqon3rLcsPjYqnfetDJ1ygJX", balance: 380 },
-    { username: "amk9", wallet: "xxx9", balance: 90 },
     { username: "amk39", wallet: "UQDWoCAyIm9-pe3C0lT4Z5tweqon3rLcsPjYqnfetDJ1ygJX", balance: 390 },
     { username: "amk40", wallet: "UQDWoCAyIm9-pe3C0lT4Z5tweqon3rLcsPjYqnfetDJ1ygJX", balance: 400 },
     { username: "amk41", wallet: "UQDWoCAyIm9-pe3C0lT4Z5tweqon3rLcsPjYqnfetDJ1ygJX", balance: 410 },
@@ -99,10 +98,7 @@ const userData = [
     { username: "amk97", wallet: "UQDWoCAyIm9-pe3C0lT4Z5tweqon3rLcsPjYqnfetDJ1ygJX", balance: 970 },
     { username: "amk98", wallet: "UQDWoCAyIm9-pe3C0lT4Z5tweqon3rLcsPjYqnfetDJ1ygJX", balance: 980 },
     { username: "amk99", wallet: "UQDWoCAyIm9-pe3C0lT4Z5tweqon3rLcsPjYqnfetDJ1ygJX", balance: 990 },
-    { username: "amk100", wallet: "UQDWoCAyIm9-pe3C0lT4Z5tweqon3rLcsPjYqnfetDJ1ygJX", balance: 1000 },
-    { username: "amk21", wallet: "xx", balance: 10 },
-    { username: "amk22", wallet: "xx", balance: 20 },
-    { username: "amk10", wallet: "xxx10", balance: 100 }
+    { username: "amk100", wallet: "UQDWoCAyIm9-pe3C0lT4Z5tweqon3rLcsPjYqnfetDJ1ygJX", balance: 1000 }
 ];
 
 const validUsername = "@muhammadshuayb";
