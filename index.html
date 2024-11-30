@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Section -->
+    <div id="login-section">
+        <form id="login-form" class="fade-in">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Enter Username">
+            <input type="password" id="password" placeholder="Enter Password">
+            <button type="submit">Login</button>
+            <div id="custom-message"></div> <!-- Custom message will appear here -->
+        </form>
+    </div>
+
+    <!-- Search Section -->
+    <div id="search-section" style="display: none;">
+        <h2 class="slide-in">Search User</h2>
+        <input type="text" id="search-bar" placeholder="Search by Username" oninput="searchUser()" class="search-bar">
+        <div id="user-details" class="fade-in-up"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
